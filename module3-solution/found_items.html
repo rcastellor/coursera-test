@@ -1,0 +1,27 @@
+<div>
+    <table class='table table-bordered table-condensed' ng-if='list.found.length!=0'>
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Description</td>
+                <td>Id</td>
+                <td>Price S</td>
+                <td>Price L</td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat='item in list.found'>
+                <td>{{item.name}}</td>
+                <td>{{item.description}}</td>
+                <td>{{item.id}}</td>
+                <td>{{item.price_small | currency}}</td>
+                <td>{{item.price_large | currency}}</td>
+                <td>
+                    <button ng-click='list.onRemove({index: $index});' class='btn'>Don't want this one!</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div ng-if='list.message'><h2>Nothing found!</h2></div>
+</div>
