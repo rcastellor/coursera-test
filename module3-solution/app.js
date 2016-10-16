@@ -37,6 +37,7 @@
             console.log('Narrow It Down for Me!');
             if(ctrl.search == ''){
                 ctrl.noFoundMessage = true;
+                ctrl.found = [];
                 return;
             }
             var promise = service.getMatchedMenuItems(ctrl.search);
